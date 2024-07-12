@@ -7,11 +7,11 @@ require('dotenv').config();
 
 //route config
 const adminRoute = require("./routes/admin");
-const quizRoute = require("./routes/quiz");
+/* const quizRoute = require("./routes/quiz"); */
 
 //use functions 
 app.use("/api/v1/admin", adminRoute);
-app.use("/api/v1/quiz", quizRoute);
+/* app.use("/api/v1/quiz", quizRoute); */
 
 //database connection
 mongoose
