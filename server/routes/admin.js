@@ -5,7 +5,7 @@ const {
   //question
   getAllQuestions,
   getQuestionById,
-  createQuestions,
+  createQuestion,
   deleteQuestion,
   updateQuestion,
 
@@ -29,7 +29,7 @@ const {
   createHardQuestion,
   deleteHardQuestion,
   updateHardQuestion,
-} = require("../controllers/adminController");
+} = require("../controllers/adminControllers");
 
 //admin panel route
 router.get("/", (req, res) => {
@@ -44,16 +44,17 @@ router.get("/all-profiles", (req, res) => {
 //admin profile see all questions
 router.get("/questions", getAllQuestions);
 router.get("/questions/:id", getQuestionById);
-router.post("/questions", createQuestions);
+router.post("/questions", createQuestion);
 router.delete("/questions/:id", deleteQuestion);
 router.patch("/questions/:id", updateQuestion);
 
 //admin panel easy
 router.get("/questions/easy", getEasyQuestions);
 router.get("/questions/easy/:id", getEasyQuestionsById);
-router.put("/questions/easy", createEasyQuestion);
+router.post("/questions/easy", createEasyQuestion);
 router.delete("/questions/easy/:id", deleteEasyQuestion);
 router.patch("/questions/easy/:id", updateEasyQuestion);
+
 
 //admin panel med
 router.get("/questions/medium", getMedQuestions);

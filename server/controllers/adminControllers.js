@@ -1,5 +1,5 @@
 //mongoose config
-const Question = require("../models/questionsModel");
+const Question = require("../models/questionModel");
 const mongoose = require("mongoose");
 
 /*questionController*/
@@ -216,7 +216,7 @@ const updateHardQuestion = async (req, res) => {
 /*create questionController*/
 
 // create questions
-const createQuestions = async (req, res) => {
+const createQuestion = async (req, res) => {
   const { level, content, code, options } = req.body;
 
   try {
@@ -282,7 +282,7 @@ module.exports = {
   //question
   getAllQuestions,
   getQuestionById,
-  createQuestions,
+  createQuestion,
   deleteQuestion,
   updateQuestion,
 
