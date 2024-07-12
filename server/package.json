@@ -1,0 +1,21 @@
+{
+  "name": "synapse-quiz-application",
+  "version": "1.0.0",
+  "description": "Synapse is a cutting-edge real-time quiz and interactive learning platform designed to engage users with dynamic quizzes and educational content. Leveraging modern web technologies, Synapse offers seamless real-time updates, intuitive user interfaces, and robust backend infrastructure.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaurya35/Synapse-Quiz-Application.git"
+  },
+  "author": "shaurya35",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shaurya35/Synapse-Quiz-Application/issues"
+  },
+  "homepage": "https://github.com/shaurya35/Synapse-Quiz-Application#readme"
+}
