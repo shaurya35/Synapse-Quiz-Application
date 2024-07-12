@@ -2,7 +2,6 @@
 const Question = require("../models/questionsModel");
 const mongoose = require("mongoose");
 
-
 /*questionController*/
 
 // get all questions
@@ -54,7 +53,6 @@ const updateQuestion = async (req, res) => {
   }
   res.status(200).json(question);
 };
-
 
 /* easyQuestionController*/
 
@@ -108,7 +106,6 @@ const updateEasyQuestion = async (req, res) => {
   res.status(200).json(question);
 };
 
-
 /*medium questionController*/
 
 // get med questions
@@ -136,7 +133,10 @@ const deleteMediumQuestion = async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({ error: "No such valid id" });
   }
-  const question = await Question.findOneAndDelete({ _id: id, level: "medium" });
+  const question = await Question.findOneAndDelete({
+    _id: id,
+    level: "medium",
+  });
   if (!question) {
     return res.status(404).json({ error: "No Such Question" });
   }
@@ -161,7 +161,6 @@ const updateMediumQuestion = async (req, res) => {
   res.status(200).json(question);
 };
 
-
 /* hard questionController*/
 
 // get hard questions
@@ -183,7 +182,7 @@ const getHardQuestionsById = async (req, res) => {
   res.status(200).json(question);
 };
 
-//delete hardquestions 
+//delete hardquestions
 const deleteHardQuestion = async (req, res) => {
   const { id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -214,7 +213,6 @@ const updateHardQuestion = async (req, res) => {
   res.status(200).json(question);
 };
 
-
 /*create questionController*/
 
 // create questions
@@ -234,7 +232,12 @@ const createEasyQuestion = async (req, res) => {
   const { content, code, options } = req.body;
 
   try {
-    const question = await Question.create({ level: "easy", content, code, options });
+    const question = await Question.create({
+      level: "easy",
+      content,
+      code,
+      options,
+    });
     res.status(200).json(question);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -246,7 +249,12 @@ const createMediumQuestion = async (req, res) => {
   const { content, code, options } = req.body;
 
   try {
-    const question = await Question.create({ level: "medium", content, code, options });
+    const question = await Question.create({
+      level: "medium",
+      content,
+      code,
+      options,
+    });
     res.status(200).json(question);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -258,13 +266,17 @@ const createHardQuestion = async (req, res) => {
   const { content, code, options } = req.body;
 
   try {
-    const question = await Question.create({ level: "hard", content, code, options });
+    const question = await Question.create({
+      level: "hard",
+      content,
+      code,
+      options,
+    });
     res.status(200).json(question);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
-
 
 module.exports = {
   //question
@@ -293,5 +305,5 @@ module.exports = {
   getHardQuestionsById,
   createHardQuestion,
   deleteHardQuestion,
-  updateHardQuestion
+  updateHardQuestion,
 };
