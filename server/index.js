@@ -26,7 +26,7 @@ app.use("/api/v1/admin", adminRoute);
 mongoose.connect(process.env.MONGO_URI).then(() => {
   app.listen(process.env.PORT, () => {
     console.log(
-      `Connected to DB and running on port https://localhost:${process.env.PORT}`
+      `Connected to DB and running on port https://localhost:${process.env.PORT}/`
     );
   });
 });
