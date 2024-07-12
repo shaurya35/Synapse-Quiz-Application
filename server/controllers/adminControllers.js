@@ -1,5 +1,7 @@
+//mongoose config
 const Question = require("../models/questionsModel");
 const mongoose = require("mongoose");
+
 
 /*questionController*/
 
@@ -53,6 +55,7 @@ const updateQuestion = async (req, res) => {
   res.status(200).json(question);
 };
 
+
 /* easyQuestionController*/
 
 // get easy questions
@@ -105,6 +108,9 @@ const updateEasyQuestion = async (req, res) => {
   res.status(200).json(question);
 };
 
+
+/*medium questionController*/
+
 // get med questions
 const getMedQuestions = async (req, res) => {
   const question = await Question.find({ level: "medium" });
@@ -156,6 +162,7 @@ const updateMediumQuestion = async (req, res) => {
 };
 
 
+/* hard questionController*/
 
 // get hard questions
 const getHardQuestions = async (req, res) => {
@@ -206,6 +213,9 @@ const updateHardQuestion = async (req, res) => {
   }
   res.status(200).json(question);
 };
+
+
+/*create questionController*/
 
 // create questions
 const createQuestions = async (req, res) => {
