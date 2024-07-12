@@ -7,7 +7,7 @@ require('dotenv').config();
 
 //route config
 const adminRoute = require("./routes/admin");
-const quizRoute = require("./routes/user");
+const quizRoute = require("./routes/quiz");
 
 //use functions 
 app.use("/api/v1/admin", adminRoute);
