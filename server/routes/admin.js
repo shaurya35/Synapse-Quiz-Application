@@ -2,28 +2,28 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  //question
+  //questions
   getAllQuestions,
   getQuestionById,
   createQuestion,
   deleteQuestion,
   updateQuestion,
 
-  //easy question
+  //easyquesitons
   getEasyQuestions,
   getEasyQuestionsById,
   createEasyQuestion,
   deleteEasyQuestion,
   updateEasyQuestion,
 
-  //medium question
+  //mediumquestions
   getMedQuestions,
   getMediumQuestionsById,
   createMediumQuestion,
   deleteMediumQuestion,
   updateMediumQuestion,
-
-  //hard questions
+  
+  //hardquestions
   getHardQuestions,
   getHardQuestionsById,
   createHardQuestion,
@@ -31,44 +31,43 @@ const {
   updateHardQuestion,
 } = require("../controllers/adminControllers");
 
-//admin panel route
+// Admin panel route
 router.get("/", (req, res) => {
   res.send("admin here");
 });
 
-//admin panel see all profiles
+// Admin panel see all profiles
 router.get("/all-profiles", (req, res) => {
   res.send("admin here- all profiles");
 });
 
-//admin profile see all questions
-router.get("/questions", getAllQuestions);
-router.get("/questions/:id", getQuestionById);
-router.post("/questions", createQuestion);
-router.delete("/questions/:id", deleteQuestion);
-router.patch("/questions/:id", updateQuestion);
-
-//admin panel easy
+// Admin panel easy questions
 router.get("/questions/easy", getEasyQuestions);
 router.get("/questions/easy/:id", getEasyQuestionsById);
 router.post("/questions/easy", createEasyQuestion);
 router.delete("/questions/easy/:id", deleteEasyQuestion);
 router.patch("/questions/easy/:id", updateEasyQuestion);
 
-
-//admin panel med
+// Admin panel medium questions
 router.get("/questions/medium", getMedQuestions);
 router.get("/questions/medium/:id", getMediumQuestionsById);
 router.post("/questions/medium", createMediumQuestion);
 router.delete("/questions/medium/:id", deleteMediumQuestion);
 router.patch("/questions/medium/:id", updateMediumQuestion);
 
-//admin panel hard
+// Admin panel hard questions
 router.get("/questions/hard", getHardQuestions);
-router.post("/questions/hard", getHardQuestionsById);
-router.get("/questions/hard/:id", createHardQuestion);
+router.get("/questions/hard/:id", getHardQuestionsById);
+router.post("/questions/hard", createHardQuestion);
 router.delete("/questions/hard/:id", deleteHardQuestion);
 router.patch("/questions/hard/:id", updateHardQuestion);
 
-//module config
+// Admin panel all questions
+router.get("/questions", getAllQuestions);
+router.get("/questions/:id", getQuestionById);
+router.post("/questions", createQuestion);
+router.delete("/questions/:id", deleteQuestion);
+router.patch("/questions/:id", updateQuestion);
+
+// Export the router
 module.exports = router;

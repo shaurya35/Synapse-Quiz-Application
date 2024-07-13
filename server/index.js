@@ -8,6 +8,14 @@ const mongoose = require("mongoose");
 //dotenv config
 require("dotenv").config();
 
+//middleware to parse json bodies
+app.use(express.json());
+
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
+});
+
 //route config
 const adminRoute = require("./routes/admin");
 /* const quizRoute = require("./routes/quiz"); */

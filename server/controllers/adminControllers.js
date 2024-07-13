@@ -58,7 +58,7 @@ const updateQuestion = async (req, res) => {
 
 // get easy questions
 const getEasyQuestions = async (req, res) => {
-  const questions = await Question.find({ level: "easy" });
+  const questions = await Question.find({ level: "easy" }).sort({ createdAt: -1 });
   res.status(200).json(questions);
 };
 
@@ -110,7 +110,7 @@ const updateEasyQuestion = async (req, res) => {
 
 // get med questions
 const getMedQuestions = async (req, res) => {
-  const question = await Question.find({ level: "medium" });
+  const question = await Question.find({ level: "medium" }).sort({ createdAt: -1 });
   res.status(200).json(question);
 };
 
@@ -165,7 +165,7 @@ const updateMediumQuestion = async (req, res) => {
 
 // get hard questions
 const getHardQuestions = async (req, res) => {
-  const question = await Question.find({ level: "hard" });
+  const question = await Question.find({ level: "hard" }).sort({ createdAt: -1 });
   res.status(200).json(question);
 };
 
@@ -226,6 +226,7 @@ const createQuestion = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
 
 //create easy question
 const createEasyQuestion = async (req, res) => {
