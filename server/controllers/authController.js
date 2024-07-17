@@ -12,4 +12,4 @@ const signupUser = async (req, res) => {
     });
 };
 
-module.export - { loginUser, signupUser };
+module.export = { loginUser, signupUser };
